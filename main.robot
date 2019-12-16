@@ -38,8 +38,9 @@ Inject Data In Database
 #    Close Database Connection
 
 Load Parameters
-    ${BROWSER}    Get Param    DS_Browser    Firefox
-
+    ${BROWSER}=    Get Param    DS_Browser    Firefox
+    Set Test Variable    ${BROWSER}
+    
 #Tear'em all
 #    Close Opened Browser
 #    Close Database Connection
