@@ -6,7 +6,7 @@ Documentation        This file contains all operations used on the SUTs database
 *** Variables ***
 ${DATABASE_API_MODULE_NAME}     psycopg2
 ${DATABASE_NAME}                jacksonviews
-${DATABASE_HOST}                192.168.0.178
+${DATABASE_HOST}                192.168.1.34
 ${DATABASE_PORT}                5432
 ${DATABASE_USER}                jacksonviews
 ${DATABASE_PASS}

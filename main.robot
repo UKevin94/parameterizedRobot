@@ -38,7 +38,7 @@ Inject Data In Database
 #    Close Database Connection
 
 Load Parameters
-    ${BROWSER}    Get Param    CUF_Browser    Firefox
+    ${BROWSER}    Get Param    DS_Browser    Firefox
 
 #Tear'em all
 #    Close Opened Browser

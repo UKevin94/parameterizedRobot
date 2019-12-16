@@ -5,7 +5,7 @@ Documentation        This file contains all Selenium operations that'll be used
 
 *** Variables ***
 #  ${BROWSER}           Firefox
-${SUT_URL}           http://192.168.0.178:8080
+${SUT_URL}           http://192.168.1.34:8080
 ${USERNAME}          admin
 ${PASSWORD}          admin
 
