@@ -34,14 +34,14 @@ Check Contact API And Delete From Browser
 Inject Data In Database
     [Arguments]     ${firstname}    ${lastname}
 #    Initiate Database Connection
-    Insert New Contact In Database  ${firstname}    ${lastname}
+    Insert New Contact In Database  ${MESSAGE}    ${lastname}
 #    Close Database Connection
 
 Load Parameters
     ${BROWSER}=    Get Param    DS_Browser    Firefox
     Set Test Variable    ${BROWSER}
     ${MESSAGE}=    Get Param    DS_Message    Nada
-    Set Test Message    ${MESSAGE}
+    Set Test Variable    ${MESSAGE}
 
 #Tear'em all
 #    Close Opened Browser
