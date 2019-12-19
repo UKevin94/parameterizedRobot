@@ -1,0 +1,64 @@
+<!--
+
+
+        This file is part of the Squashtest platform.
+        Copyright (C) 2011 - 2019 Henix
+
+        See the NOTICE file distributed with this work for additional
+        information regarding copyright ownership.
+
+        This is free software: you can redistribute it and/or modify
+        it under the terms of the GNU Lesser General Public License as published by
+        the Free Software Foundation, either version 3 of the License, or
+        (at your option) any later version.
+
+        this software is distributed in the hope that it will be useful,
+        but WITHOUT ANY WARRANTY; without even the implied warranty of
+        MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+        GNU Lesser General Public License for more details.
+
+        You should have received a copy of the GNU Lesser General Public License
+        along with this software.  If not, see <http://www.gnu.org/licenses />.
+
+-->
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>squash-tf</groupId>
+    <artifactId>execution-server-robotframework-job</artifactId>
+    <packaging>pom</packaging>
+    <version>2.3.0.RC1</version>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.squashtest.ta.galaxia</groupId>
+                <artifactId>squash-tf-robotframework-runner-maven-plugin</artifactId>
+                <version>1.0.0.RC1</version>
+                <configuration>
+                    <outputDirectory>${project.basedir}/target/squashTF</outputDirectory>
+                    <configurers>
+                        <configurer implementation="org.squashtest.ta.link.SquashTMCallbackEventConfigurer">
+                            <endpointURL>${status.update.events.url}</endpointURL>
+                            <executionExternalId>${squash.ta.external.id}</executionExternalId>
+                            <jobName>${jobname}</jobName>
+                            <hostName>${hostname}</hostName>
+                            <endpointLoginConfFile>${squash.ta.conf.file}</endpointLoginConfFile>
+                            <reportBaseUrl>${ta.tmcallback.reportbaseurl}</reportBaseUrl>
+                            <jobExecutionId>${ta.tmcallback.jobexecutionid}</jobExecutionId>
+                            <reportName>${ta.tmcallback.reportname}</reportName>
+                        </configurer>
+                    </configurers>
+                    <exporters>
+                        <exporter implementation="org.squashtest.ta.commons.exporter.html.HtmlSummarySuiteResultExporter">
+                            <includeHeader>true</includeHeader>
+                            <outputDirectoryName>html-reports</outputDirectoryName>
+                            <tocDisplayThreshold>3</tocDisplayThreshold>
+                        </exporter>
+                        <exporter implementation="org.squashtest.ta.commons.exporter.html.HtmlSuiteResultExporter">
+                            <outputDirectoryName>html-details</outputDirectoryName>
+                        </exporter>
+                    </exporters>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

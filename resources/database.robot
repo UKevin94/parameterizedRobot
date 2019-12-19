@@ -6,14 +6,14 @@ Documentation        This file contains all operations used on the SUTs database
 *** Variables ***
 ${DATABASE_API_MODULE_NAME}     psycopg2
 ${DATABASE_NAME}                jacksonviews
-${DATABASE_HOST}                192.168.1.34
+#  ${DATABASE_HOST}                192.168.1.34
 ${DATABASE_PORT}                5432
 ${DATABASE_USER}                jacksonviews
 ${DATABASE_PASS}
 
 *** Keywords ***
 Initiate Database Connection
-    Connect To Database     ${DATABASE_API_MODULE_NAME}      ${DATABASE_NAME}      ${DATABASE_USER}     ${DATABASE_PASS}    ${DATABASE_HOST}    ${DATABASE_PORT}
+    Connect To Database     ${DATABASE_API_MODULE_NAME}      ${DATABASE_NAME}      ${DATABASE_USER}     ${DATABASE_PASS}    ${SUT_HOST}    ${DATABASE_PORT}
 
 Insert New Contact In Database
     [Arguments]            ${contact_firstname}    ${contact_lastname}

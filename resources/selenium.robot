@@ -5,7 +5,7 @@ Documentation        This file contains all Selenium operations that'll be used
 
 *** Variables ***
 #  ${BROWSER}           Firefox
-${SUT_URL}           http://192.168.1.34:8080
+#  ${SUT_URL}           http://192.168.1.34:8080
 ${USERNAME}          admin
 ${PASSWORD}          admin
 
@@ -13,7 +13,7 @@ ${PASSWORD}          admin
 
 Open The Main Page
 #    [Arguments]     ${browser}      ${application_url}
-    Open Browser        ${SUT_URL}      ${BROWSER}
+    Open Browser        http://${SUT_HOST}:8080      ${BROWSER}
 
 Login
     Click Link                          xpath: //a[@id='account-menu']
@@ -32,7 +32,9 @@ Go To The Contact Page
 
 Delete The Injected Contact
     [Arguments]                         ${firstname}    ${lastname}
+    Wait Until Page Contains Element    xpath: //button[contains(@class, 'btn-danger')][ancestor::td[preceding-sibling::td[contains(text(),'${firstname}')]][preceding-sibling::td[contains(text(),'${lastname}')]]]    20
     Click Button                        xpath: //button[contains(@class, 'btn-danger')][ancestor::td[preceding-sibling::td[contains(text(),'${firstname}')]][preceding-sibling::td[contains(text(),'${lastname}')]]]
+    Wait Until Page Contains Element    xpath: //button[@id='jac-confirm-delete-contact']    20
     Click Button                        xpath: //button[@id='jac-confirm-delete-contact']
 
 Close Opened Browser
