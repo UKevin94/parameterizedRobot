@@ -6,9 +6,9 @@ Resource        resources/api.robot
 Test Template   Check Contact API And Delete From Browser
 Documentation   This file tests the Contact API and check that the GUI
 ...             allows us to delete them
-Suite Setup     Initiate Database Connection
+Suite Setup     Load And Initiate Database Connection
 Suite Teardown  Close Database Connection
-Test Setup      Load Parameters
+Test Setup      Load Browser Parameter
 Test Teardown   Close Opened Browser
 
 *** Test Cases ***          First Name          Last Name
@@ -40,11 +40,9 @@ Inject Data In Database
     Insert New Contact In Database  ${firstname}    ${lastname}
 #    Close Database Connection
 
-Load Parameters
+Load Browser Parameter
     ${BROWSER}=    Get Param    DS_Browser
     Set Test Variable    ${BROWSER}
-    ${SUT_HOST}=    Get Test Param    DS_Host
-    Set Test Variable    ${SUT_HOST}
 
 #Tear'em all
 #    Close Opened Browser

@@ -12,7 +12,9 @@ ${DATABASE_USER}                jacksonviews
 ${DATABASE_PASS}
 
 *** Keywords ***
-Initiate Database Connection
+Load And Initiate Database Connection
+    ${SUT_HOST}=    Get Test Param    DS_Host
+    Set Suite Variable    ${SUT_HOST}
     Connect To Database     ${DATABASE_API_MODULE_NAME}      ${DATABASE_NAME}      ${DATABASE_USER}     ${DATABASE_PASS}    ${SUT_HOST}    ${DATABASE_PORT}
 
 Insert New Contact In Database
