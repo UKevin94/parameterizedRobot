@@ -43,7 +43,7 @@ Inject Data In Database
 Load Parameters
     ${BROWSER}=    Get Param    DS_Browser
     Set Test Variable    ${BROWSER}
-    ${SUT_HOST}=    Get Param    DS_Host
+    ${SUT_HOST}=    Get Test Param    DS_Host
     Set Test Variable    ${SUT_HOST}
 
 #Tear'em all
