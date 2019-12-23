@@ -13,7 +13,7 @@ Test Teardown   Close Opened Browser
 
 *** Test Cases ***          First Name          Last Name
 Standard Case               John                Smith
-  [Tags]  tf:linked-TC=c89ed20b-4f6d-43c7-91a1-82f92fbd9b4d
+  [Tags]  tf:linked-TC=a1d93f71-6489-47c2-99b4-a4b7459dc269
 Special Char                $$$$                $$$$
 No Last Name                Johnn               ${EMPTY}
   [Tags]  tf:linked-TC= d7951232-3faf-4d45-9ce0-2821ab2e2041
